@@ -1,6 +1,5 @@
 from datetime import date
-from domain.entities.minimum import Minimum
-from domain.enums.user_types import UserTypes
+from skyhelper_backend.domain.enums import UserTypes
 
 
 class User:
@@ -13,9 +12,10 @@ class User:
     patronymic: str | None
     
     birth_date: date
-    minimum: Minimum | None
     
     group_id: int
+
+
     
     
     

@@ -1,21 +1,24 @@
 from datetime import datetime, timedelta
 
+from skyhelper_backend.domain.entities import Exercise
+from skyhelper_backend.domain.entities import User
+
 class Flight:
     flight_id: int
     
     aircraft_id: int
     
-    pilot_id: int
-    copilot_id: int | None
-    third_id: int | None
+    pilot: User
+    copilot: User | None
+    third: User | None
     
-    provider_id: int | None
-    crew_member_id: int | None
+    provider: User | None
+    crew_member: User | None
     
     landings_num: int
     approaches_num: int
     
-    exercise_id: int | None
+    exercise: Exercise | None
     
     mark: int | None
     
@@ -48,7 +51,7 @@ class Flight:
         self,
         flight_id: int,
         aircraft_id: int,
-        pilot_id: int,
+        pilot: User,
         landings_num: int,
         approaches_num: int,
         place_from: str,
@@ -58,11 +61,11 @@ class Flight:
         stop_datetime: datetime,
         ground_time: timedelta,
         flight_time: int,
-        copilot_id: int | None = None,
-        third_id: int | None = None,
-        provider_id: int | None = None,
-        crew_member_id: int | None = None,
-        exercise_id: int | None = None,
+        copilot: User | None = None,
+        third: User | None = None,
+        provider: User | None = None,
+        crew_member: User | None = None,
+        exercise: Exercise | None = None,
         mark: int | None = None,
         place_to: str | None = None,
         ground_time_night: int | None = None,
@@ -81,17 +84,17 @@ class Flight:
         
         self.aircraft_id = aircraft_id
         
-        self.pilot_id = pilot_id
-        self.copilot_id = copilot_id
-        self.third_id = third_id
+        self.pilot = pilot
+        self.copilot = copilot
+        self.third = third
         
-        self.provider_id = provider_id
-        self.crew_member_id = crew_member_id
+        self.provider = provider
+        self.crew_member = crew_member
         
         self.landings_num = landings_num
         self.approaches_num = approaches_num
         
-        self.exercise_id = exercise_id
+        self.exercise = exercise
         
         self.mark = mark
         
