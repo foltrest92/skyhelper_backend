@@ -1,1 +1,1 @@
-from .domain.entities import Flight
+from .domain.entities import FlightsExercise

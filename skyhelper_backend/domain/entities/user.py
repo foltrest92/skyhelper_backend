@@ -1,7 +1,9 @@
+from dataclasses import dataclass
 from datetime import date
 from skyhelper_backend.domain.enums import UserTypes
 
 
+@dataclass
 class User:
     user_id: int
     
@@ -12,8 +14,6 @@ class User:
     patronymic: str | None
     
     birth_date: date
-    
-    group_id: int
 
 
     

@@ -1,6 +1,7 @@
-from skyhelper_backend.domain.entities import Minimum
-from skyhelper_backend.domain.entities import User
+from dataclasses import dataclass
+from skyhelper_backend.domain.entities import Minimum, User
 
 
+@dataclass
 class Instructor(User):
     minimum: Minimum | None
